@@ -1,0 +1,21 @@
+
+    sequenceDiagram
+        participant M as Main
+        participant U as User
+        participant W as Weather
+        participant A as Aiming
+        participant Map as Map
+        M->>U: create user
+        U->>M: return user
+        M->>W: get weather
+        W->>M: return weather
+        M->>A: create aiming
+        A->>M: return aiming
+        M->>Map: create map
+        Map->>M: return map
+        M->>U: add score
+        U->>M: return updated scores
+        M->>A: get aiming point
+        A->>M: return aiming point
+        M->>Map: show dispersion pattern
+    

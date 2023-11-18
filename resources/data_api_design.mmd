@@ -1,0 +1,36 @@
+
+    classDiagram
+        class User{
+            +str username
+            +str password
+            +list scores
+            +dict dispersion_pattern
+            +list clubs
+            --init__(username: str, password: str)
+            +add_score(score: int)
+            +get_scores(): list
+            +get_dispersion_pattern(): dict
+            +add_club(club: str)
+            +get_clubs(): list
+        }
+        class Weather{
+            +str api_key
+            +dict current_weather
+            --init__(api_key: str)
+            +get_weather(location: str): dict
+        }
+        class Aiming{
+            +User user
+            +Weather weather
+            --init__(user: User, weather: Weather)
+            +get_aiming_point(club: str): tuple
+        }
+        class Map{
+            +User user
+            --init__(user: User)
+            +show_dispersion_pattern(): None
+        }
+        User "1" -- "1" Weather: uses
+        User "1" -- "1" Aiming: uses
+        User "1" -- "1" Map: uses
+    
